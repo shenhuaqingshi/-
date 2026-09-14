@@ -1,0 +1,31 @@
+paths:
+  benchmark_json: online-json-editor.json
+  cif_dir: cif_files
+  checkpoint: checkpoints/model.pth
+
+graph:
+  atom_fea_len: 92
+  nbr_fea_len: 41
+  max_num_nbr: 6
+
+model:
+  atom_fea_len: 64
+  n_graph_conv: 3
+  h_fea_len: 128
+  n_tasks: 3
+  dropout: 0.1
+
+training:
+  batch_size: 4
+  epochs: 5
+  lr: 0.001
+  validation_split: 0.3
+  seed: 42
+
+uq:
+  mc_dropout_iterations: 20
+
+tasks:
+  - practical_capacity_mAh_g
+  - voltage_vs_Li_Li_mV
+  - cycle_life_cycles
